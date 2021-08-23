@@ -3,14 +3,20 @@ const faunadb = require("faunadb");
 const Collection = require("./collection");
 
 class FaunaAPI {
-  constructor(secret, collections) {
+  constructor(secret) {
     this.client = new faunadb.Client({ secret });
     this.query = faunadb.query;
 
-    collections.forEach(
-      (collection) =>
-        (this[collection] = new Collection(collection, this.client, this.query))
-    );
+    this.getAllCollections().then((collections) => {
+      collections.forEach(
+        (collection) =>
+          (this[collection] = new Collection(
+            collection,
+            this.client,
+            this.query
+          ))
+      );
+    });
   }
 
   // CREATE
@@ -19,6 +25,14 @@ class FaunaAPI {
     return this.client.query(
       this.query.Paginate(this.query.Match(this.query.Index(index), value))
     );
+  }
+
+  // READ
+
+  getAllCollections() {
+    return this.client
+      .query(this.query.Paginate(this.query.Collections()))
+      .then((res) => res.data);
   }
 }
 

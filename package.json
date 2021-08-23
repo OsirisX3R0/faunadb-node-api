@@ -7,7 +7,8 @@
     "faunadb": "^4.3.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodemon ./test.js",
+    "dev": "nodemon test.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/OsirisX3R0/faunadb-node-api/issues"
   },
-  "homepage": "https://github.com/OsirisX3R0/faunadb-node-api#readme"
+  "homepage": "https://github.com/OsirisX3R0/faunadb-node-api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
 }
