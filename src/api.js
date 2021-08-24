@@ -9,12 +9,8 @@ class FaunaAPI {
 
     this.getAllCollections().then((collections) => {
       collections.forEach(
-        (collection) =>
-          (this[collection] = new Collection(
-            collection,
-            this.client,
-            this.query
-          ))
+        ({ value }) =>
+          (this[value.id] = new Collection(value.id, this.client, this.query))
       );
     });
   }
