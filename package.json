@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "nodemon ./test.js",
-    "dev": "nodemon test.js"
+    "demo": "nodemon demo"
   },
   "repository": {
     "type": "git",
