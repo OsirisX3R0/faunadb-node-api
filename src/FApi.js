@@ -1,6 +1,7 @@
 const faunadb = require("faunadb");
 
-const Collection = require("./collection");
+const Collection = require("./FCollection");
+const Index = require("./FIndex");
 
 class FaunaAPI {
   constructor(secret) {
@@ -13,14 +14,13 @@ class FaunaAPI {
           (this[value.id] = new Collection(value.id, this.client, this.query))
       );
     });
-  }
 
-  // CREATE
-
-  getByIndex(index, value) {
-    return this.client.query(
-      this.query.Paginate(this.query.Match(this.query.Index(index), value))
-    );
+    this.getAllIndexes().then((indexes) => {
+      indexes.forEach(
+        ({ value }) =>
+          (this[value.id] = new Index(value.id, this.client, this.query))
+      );
+    });
   }
 
   // READ
@@ -28,6 +28,12 @@ class FaunaAPI {
   getAllCollections() {
     return this.client
       .query(this.query.Paginate(this.query.Collections()))
+      .then((res) => res.data);
+  }
+
+  getAllIndexes() {
+    return this.client
+      .query(this.query.Paginate(this.query.Indexes()))
       .then((res) => res.data);
   }
 }
