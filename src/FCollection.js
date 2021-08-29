@@ -14,7 +14,7 @@ class Collection {
       this.query.Create(this.query.Collection(this.name), { data })
     );
 
-    return documents.data.map((doc) => new Document(doc));
+    // return documents.data.map((doc) => new Document(doc));
   }
 
   // READ
@@ -33,11 +33,9 @@ class Collection {
   }
 
   async getById(id) {
-    let documents = await this.client.query(
+    return await this.client.query(
       this.query.Get(this.query.Ref(this.query.Collection(this.name), id))
     );
-
-    return documents.data.map((doc) => new Document(doc));
   }
 
   // UPDATE
@@ -49,7 +47,7 @@ class Collection {
       })
     );
 
-    return documents.data.map((doc) => new Document(doc));
+    // return documents.data.map((doc) => new Document(doc));
   }
 
   // DELETE
@@ -59,7 +57,7 @@ class Collection {
       this.query.Delete(this.query.Ref(this.query.Collection(this.name), id))
     );
 
-    return documents.data.map((doc) => new Document(doc));
+    // return documents.data.map((doc) => new Document(doc));
   }
 }
 
