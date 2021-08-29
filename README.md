@@ -2,6 +2,27 @@
 
 A NodeJS API for FaunaDB
 
+## Usage
+
+```js
+// api.js
+
+const FaunaAPI = require("@osirisx3r0/faunadb-node-api");
+
+module.exports = new FaunaAPI(process.env.FAUNA_API_KEY);
+```
+
+```js
+// users.js
+
+const API = require("api.js");
+
+const getUsers = async () => {
+  await API.connect();
+  return await API.users.getAll();
+};
+```
+
 ## Development
 
 1. Clone the repository
