@@ -8,19 +8,25 @@ class FaunaAPI {
     this.client = new faunadb.Client({ secret });
     this.query = faunadb.query;
 
-    this.getAllCollections().then((collections) => {
-      collections.forEach(
-        ({ value }) =>
-          (this[value.id] = new Collection(value.id, this.client, this.query))
-      );
-    });
+    return Promise.all([this.getAllCollections(), this.getAllIndexes()]).then(
+      ([collections, indexes]) => {
+        for (let c = 0; c < collections.length; c++) {
+          let collection = collections[c].value;
+          this[collection.id] = new Collection(
+            collection.id,
+            this.client,
+            this.query
+          );
+        }
 
-    this.getAllIndexes().then((indexes) => {
-      indexes.forEach(
-        ({ value }) =>
-          (this[value.id] = new Index(value.id, this.client, this.query))
-      );
-    });
+        for (let i = 0; i < indexes.length; i++) {
+          let index = indexes[i].value;
+          this[index.id] = new Index(index.id, this.client, this.query);
+        }
+
+        return this;
+      }
+    );
   }
 
   // READ
