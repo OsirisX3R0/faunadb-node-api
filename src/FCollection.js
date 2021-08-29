@@ -31,11 +31,11 @@ class Collection {
   }
 
   async getById(id) {
-    let documents = await this.client.query(
+    let document = await this.client.query(
       this.query.Get(this.query.Ref(this.query.Collection(this.name), id))
     );
 
-    return documents;
+    return new Document(document);
   }
 
   // UPDATE
