@@ -1,3 +1,3 @@
-const FaunaAPI = require("./src/FApi");
+const FaunaAPI = require("./src/FaunaAPI");
 
 module.exports = FaunaAPI;
