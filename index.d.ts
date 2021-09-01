@@ -2,7 +2,7 @@ const faunadb = require('faunadb')
 
 export type IndexGetValues = string[] | number[] | boolean[]
 
-export declare class Document {
+export class Document {
   /**
    * Creates a new Document instance
    * @param document FaunaDB document
@@ -17,7 +17,7 @@ export declare class Document {
   timestamp: number
 }
 
-export declare class Ref {
+export class Ref {
   /**
    * Creates a new Ref instance
    * @param ref FaunaDB Ref
@@ -30,7 +30,7 @@ export declare class Ref {
   id: string
 }
 
-export declare class Index {
+export class Index {
   /**
    * Creates a new Index instance
    * @param name Name of the collection
@@ -53,7 +53,7 @@ export declare class Index {
   get(values: IndexGetValues): Ref[]
 }
 
-export declare class Collection {
+export class Collection {
   /**
    * Creates a new Collection instance
    * @param name Name of the collection
@@ -95,7 +95,7 @@ export declare class Collection {
 }
 
 /** Utility for contacting a FaunaDB database */
-export declare class FaunaAPI {
+export class FaunaAPI {
   /**
    * Creates a new API instance
    * @param secret FaunaDB secret
