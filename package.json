@@ -1,6 +1,6 @@
 {
   "name": "@osirisx3r0/faunadb-node-api",
-  "version": "0.6.0",
+  "version": "0.6.3",
   "description": "A NodeJS API for FaunaDB",
   "main": "index.js",
   "dependencies": {
