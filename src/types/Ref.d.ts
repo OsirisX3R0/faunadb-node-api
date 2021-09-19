@@ -6,17 +6,15 @@ interface FaunaRef {
 }
 
 /** Represents a reference to a document */
-declare class Ref {
+export default class Ref {
   /**
    * Creates a new Ref instance
    * @param ref FaunaDB Ref
    */
-  constructor(ref: FaunaRef)
+  constructor(ref: FaunaRef): Ref
 
   /** Name of the collection */
   collection: string
   /** Ref id */
   id: string
 }
-
-export default Ref

@@ -5,14 +5,14 @@ import Ref from "./Ref";
 type Values = (string|number|boolean)[]
 
 /** Represents an Index used to query collections by particular parameters */
-declare class Index {
+export default class Index {
   /**
    * Creates a new Index instance
    * @param name The name of the index
    * @param client The FaunaDB `Client` used to query the database
    * @param query Query utilities
    */
-  constructor(name: string, client: faunadb.Client, query: object)
+  constructor(name: string, client: faunadb.Client, query: object): Index
 
   /** Name of the index */
   name: string
@@ -23,5 +23,3 @@ declare class Index {
 
   get(values: Values): Promise<Ref[]>
 }
-
-export default Index

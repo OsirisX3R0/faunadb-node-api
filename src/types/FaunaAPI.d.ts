@@ -3,12 +3,12 @@ import faunadb from 'faunadb'
 import Ref from "./Ref";
 
 /** The API that communicates with a FaunaDB database */
-declare class FaunaAPI {
+export default class FaunaAPI {
   /**
    * Creates a new API instance
    * @param secret FaunaDB secret to initiate connection
    */
-  constructor(secret: string)
+  constructor(secret: string): FaunaAPI
 
   /** `Client` for querying the database */
   client: faunadb.Client
@@ -22,5 +22,3 @@ declare class FaunaAPI {
   /** Returns all indexes */
   getAllIndexes(): Promise<Ref[]>
 }
-
-export default FaunaAPI

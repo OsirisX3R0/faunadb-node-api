@@ -2,14 +2,14 @@ import faunadb from 'faunadb'
 import Document from './Document'
 
 /** Represents a collection in the FaunaDB database */
-declare class Collection {
+export default class Collection {
   /**
    * Creates a new Collection instance
    * @param name Name of the collection
    * @param client `Client` for querying the database
    * @param query Querying utilities
    */
-  constructor(name: string, client: faunadb.Client, query: object)
+  constructor(name: string, client: faunadb.Client, query: object): Collection
 
   /** Name of the collection */
   name: string
@@ -46,5 +46,3 @@ declare class Collection {
    */
   deleteById(id: string): Promise<void>
 }
-
-export default Collection
