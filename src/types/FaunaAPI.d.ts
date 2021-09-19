@@ -8,7 +8,7 @@ export default class FaunaAPI {
    * Creates a new API instance
    * @param secret FaunaDB secret to initiate connection
    */
-  constructor(secret: string): FaunaAPI
+  constructor(secret: string)
 
   /** `Client` for querying the database */
   client: faunadb.Client

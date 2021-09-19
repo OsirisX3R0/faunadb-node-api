@@ -11,7 +11,7 @@ export default class Ref {
    * Creates a new Ref instance
    * @param ref FaunaDB Ref
    */
-  constructor(ref: FaunaRef): Ref
+  constructor(ref: FaunaRef)
 
   /** Name of the collection */
   collection: string

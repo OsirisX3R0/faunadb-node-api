@@ -11,7 +11,7 @@ export default class Document {
    * Creates a new Document instance
    * @param document The document from FaunaDB
    */
-  constructor(document: FaunaDoc): Document
+  constructor(document: FaunaDoc)
 
   /** Id of the document */
   id: string

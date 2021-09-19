@@ -12,7 +12,7 @@ export default class Index {
    * @param client The FaunaDB `Client` used to query the database
    * @param query Query utilities
    */
-  constructor(name: string, client: faunadb.Client, query: object): Index
+  constructor(name: string, client: faunadb.Client, query: object)
 
   /** Name of the index */
   name: string

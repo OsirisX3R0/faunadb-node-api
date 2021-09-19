@@ -9,7 +9,7 @@ export default class Collection {
    * @param client `Client` for querying the database
    * @param query Querying utilities
    */
-  constructor(name: string, client: faunadb.Client, query: object): Collection
+  constructor(name: string, client: faunadb.Client, query: object)
 
   /** Name of the collection */
   name: string
