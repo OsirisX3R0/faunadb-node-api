@@ -1,3 +1,3 @@
-import FaunaAPI from './src/typings/FaunaAPI'
+import FaunaAPI from './src/types/FaunaAPI'
 
-export default FaunaAPI
+export { FaunaAPI }

@@ -6,7 +6,7 @@ type FaunaDoc = {
 }
 
 /** Represents a document (row) in the database */
-declare class Document {
+export default class Document {
   /**
    * Creates a new Document instance
    * @param document The document from FaunaDB
@@ -20,5 +20,3 @@ declare class Document {
   /** Timestamp (ts) for the document */
   timestamp: string
 }
-
-export default Document

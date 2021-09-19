@@ -5,7 +5,7 @@ import Ref from "./Ref";
 type Values = (string|number|boolean)[]
 
 /** Represents an Index used to query collections by particular parameters */
-declare class Index {
+export default class Index {
   /**
    * Creates a new Index instance
    * @param name The name of the index
@@ -23,5 +23,3 @@ declare class Index {
 
   get(values: Values): Promise<Ref[]>
 }
-
-export default Index

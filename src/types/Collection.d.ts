@@ -2,7 +2,7 @@ import faunadb from 'faunadb'
 import Document from './Document'
 
 /** Represents a collection in the FaunaDB database */
-declare class Collection {
+export default class Collection {
   /**
    * Creates a new Collection instance
    * @param name Name of the collection
@@ -46,5 +46,3 @@ declare class Collection {
    */
   deleteById(id: string): Promise<void>
 }
-
-export default Collection
