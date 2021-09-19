@@ -1,4 +1,4 @@
-const Document = require("./FDocument");
+const Document = require("./Document");
 
 class Collection {
   constructor(name, client, query) {

@@ -1,8 +1,8 @@
 const faunadb = require("faunadb");
 
-const Collection = require("./FCollection");
-const Index = require("./FIndex");
-const Ref = require("./FRef");
+const Collection = require("./Collection");
+const Index = require("./Index");
+const Ref = require("./Ref");
 
 class FaunaAPI {
   constructor(secret) {

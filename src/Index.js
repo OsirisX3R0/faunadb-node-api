@@ -1,4 +1,4 @@
-const Ref = require("./FRef");
+const Ref = require("./Ref");
 
 class Index {
   constructor(name, client, query) {
