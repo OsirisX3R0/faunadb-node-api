@@ -4,7 +4,7 @@
   "description": "A NodeJS API for FaunaDB",
   "main": "index.js",
   "dependencies": {
-    "faunadb": "^4.4.0"
+    "faunadb": "^4.4.1"
   },
   "scripts": {
     "test": "nodemon ./test.js",
